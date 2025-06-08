@@ -1,3 +1,6 @@
+//We use the Material’s Grid system above to enable a responsive UI. For example, when the browser’s viewport is extra-large (xl), 
+//we allow six cards per row, whereas a small viewport (sm) allows only two cards per row
+
 import React from "react";
 import Movie from "../movieCard/";
 import Grid from "@mui/material/Grid";

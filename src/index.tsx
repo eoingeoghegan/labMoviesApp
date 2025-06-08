@@ -1,3 +1,4 @@
+//The App component is at the top of the component hierarchy
 import { createRoot } from "react-dom/client";
 import HomePage from "./pages/homePage";
 import sample from './stories/sampleData'

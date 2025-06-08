@@ -1,3 +1,14 @@
+/*
+A Material UI Card component is used to contain the information - see here.
+For some movies, TMDB does not have a related poster. We display a placeholder in those cases.
+In the card’s content section, we use the Material’s Grid component to structure the information - see here. We want the content to be horizontally aligned.
+The Typography component controls how text is displayed and represented in the DOM - see here. In this example, the text will show as an h6 header, and its DOM representation will be a paragraph (p).
+The MovieCard component expects a BaseMovie type as a prop - we saw an example of a Movie’s data structure in an earlier section of this lab.
+
+The second story deals with the exceptional case when a movie does not have a poster image.
+*/
+
+
 import React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
