@@ -32,3 +32,25 @@ export interface BaseMovieProps {
       name: string;
     }[];
   }
+
+/*
+To bring the components from the previous section together, we will create a Movie Details page. 
+This page will display a movie’s details and associated poster/media images. 
+To support this, the page will accept two props: a movie object and an array of poster images 
+for that movie. We already have an interface defined for movies, but not for images. 
+*/
+
+export interface MovieImage {
+  file_path: string;
+  aspect_ratio?: number; //some props are optional...
+  height?: number;
+  iso_639_1?: string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
+}
+
+export interface MoviePageProps {
+  movie: MovieDetailsProps;
+  images: MovieImage[];
+}
