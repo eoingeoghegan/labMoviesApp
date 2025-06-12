@@ -20,6 +20,10 @@ export interface BaseMovieProps {
     genre_ids?: number[];
   }
 
+  export interface MovieListPageTemplateProps extends BaseMovieListProps {
+  title: string;
+}
+
 
 //assembling the page
    export interface BaseMovieListProps { 
