@@ -17,6 +17,7 @@ export interface BaseMovieProps {
     revenue: number;
     vote_count: number;
     favourite?: boolean;
+    genre_ids?: number[];
   }
 
 
@@ -59,3 +60,6 @@ export interface MoviePageProps {
   movie: MovieDetailsProps;
   images: MovieImage[];
 }
+
+//Create a new type to restrict the Filter options to either "title" or "genre"
+export type FilterOption = "title" | "genre";
