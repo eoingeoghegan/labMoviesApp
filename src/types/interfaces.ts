@@ -68,3 +68,10 @@ export interface MoviePageProps {
 
 //Create a new type to restrict the Filter options to either "title" or "genre"
 export type FilterOption = "title" | "genre";
+
+
+export interface Review{
+    id: string;
+    content: string
+    author: string
+  }
