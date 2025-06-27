@@ -31,6 +31,7 @@ const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
       <IconButton aria-label="go back">
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
+      
       <FavoriteIcon />
       
 
