@@ -28,7 +28,7 @@ export interface BaseMovieProps {
 //assembling the page
    export interface BaseMovieListProps { 
     movies: BaseMovieProps[];
-    selectFavourite: (movieId: number) => void; 
+    action: (m: BaseMovieProps) => React.ReactNode;
   }  
 
 // Extend the Base Movie interface. This component will display genre data
