@@ -91,6 +91,8 @@ export interface DiscoverMovies {
 }
 
 
+
+
   export interface Review {
     author: string,
     content: string,
@@ -98,3 +100,36 @@ export interface DiscoverMovies {
     rating: number,
     movieId: number,
   }
+
+// from TMDB Api Documentation
+  export interface ActorProps {
+    id: number,
+    place_of_birth: string,
+    name: string,
+    profile_path: string,
+    also_known_as: [],
+    biography: string,
+    birthday: string,
+    deathday: string,
+    gender: number,
+    homepage: string,
+    imdb_id: string,
+    known_for_department: string,
+    popularity: number,
+    poster_path: string,
+
+  }
+
+  export interface ActorImageProps {
+    file_path: string,
+    aspect_ratio: number,
+    height: number,
+    iso_639_1: string,
+    vote_average: number, 
+    vote_count: number,
+    width: number,
+  }
+
+   export interface ActorListProps { 
+    actors: ActorProps[];
+  }   
