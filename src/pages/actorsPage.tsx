@@ -1,25 +1,29 @@
-import React from "react";
-
-import Grid from "@mui/material/Grid";
+import React, { useEffect, useState } from "react";
 import ActorList from "../components/actorList";
-import { ActorListProps } from "../types/interfaces";
- 
-const styles = {
-  root: {
-    padding: "20px",
-  },
-};
+import { ActorProps } from "../types/interfaces";
 
+const ActorsPage: React.FC = () => {
+  const [actors, setActors] = useState<ActorProps[]>([]);
 
-
-const ActorListPage: React.FC<ActorListProps> = ({actors}) => {
-  return (
-    <Grid container sx={styles.root}>
+  useEffect(() => {
+    const fetchActors = async () => {
       
-      <Grid item container spacing={5}>
-        <ActorList actors={actors}></ActorList>
-      </Grid>
-    </Grid>
+      const res = await fetch(
+        `https://api.themoviedb.org/3/discover/person?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
+      );
+      const data = await res.json();
+      setActors(data.results);
+    };
+
+    fetchActors();
+  }, []);
+
+  return (
+    <div>
+      <h2>Popular Actors</h2>
+      <ActorList actors={actors} />
+    </div>
   );
 };
-export default ActorListPage;
+
+export default ActorsPage;

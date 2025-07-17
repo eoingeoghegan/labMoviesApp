@@ -43,7 +43,7 @@ const App = () => {
           <Routes>
             <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
             <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
-            <Route path="/actors" element={<ActorsPage actors={[]} />} />
+            <Route path="/actors" element={<ActorsPage />} />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
