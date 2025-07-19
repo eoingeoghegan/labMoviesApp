@@ -1,4 +1,4 @@
-// creating Tv Show Card
+// creating Upcoming Card
 
 
 import React from "react";
@@ -13,7 +13,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import { TvShowProps } from "../../types/interfaces";
+import { UpcomingMovieProps } from "../../types/interfaces";
 import img from '../../images/film-poster-placeholder.png';
 
 
@@ -27,16 +27,16 @@ const styles = {
 
 
 
-const TvShowCard: React.FC<TvShowProps> = (tvShow) => {
+const UpcomingMovieCard: React.FC<UpcomingMovieProps> = (upcomingMovie) => {
   
   return (
     <Card sx={styles.card}>
-      <CardHeader title={tvShow.name} />
+      <CardHeader title={upcomingMovie.original_title} />
       <CardMedia
         sx={styles.media}
         image={
-          tvShow.poster_path
-            ? `https://image.tmdb.org/t/p/w500/${tvShow.poster_path}`
+          upcomingMovie.poster_path
+            ? `https://image.tmdb.org/t/p/w500/${upcomingMovie.poster_path}`
             : img
         }
       />
@@ -46,7 +46,7 @@ const TvShowCard: React.FC<TvShowProps> = (tvShow) => {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {tvShow.vote_average}{" "}
+              {"  "} {upcomingMovie.vote_average}{" "}
             </Typography>
           </Grid>
         </Grid>
@@ -63,4 +63,4 @@ const TvShowCard: React.FC<TvShowProps> = (tvShow) => {
   );
 }
 
-export default TvShowCard;
+export default UpcomingMovieCard;

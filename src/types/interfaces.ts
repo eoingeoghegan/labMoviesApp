@@ -161,3 +161,39 @@ export interface TvShowImage {
 export interface TvShowListProps { 
   tvShows: TvShowProps[];
 }   
+
+
+// UPCOMING MOVIES
+
+export interface UpcomingMovieProps {
+  adult: boolean;
+  backdrop_path: string | null;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string | null;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
+export interface UpcomingMovieListProps { 
+  upcomingMovies: UpcomingMovieProps[];
+} 
+
+// for filtering
+export interface UpcomingMovies {
+  dates: {
+    maximum: string;
+    minimum: string;
+  };
+  page: number;
+  results: UpcomingMovieProps[];
+  total_pages: number;
+  total_results: number;
+}

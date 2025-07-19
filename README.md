@@ -45,6 +45,11 @@ updataed the actorPage to import the cards and list of actors to display fetched
 
 .
 
-2. same thing as above for 2 new views, TV shows and  ?popular movies?
+2. same thing as above for 2 new views, TV shows and upcoming movies
 
 Basic method: changed suteHeader, updated the routes in index, created tv showsPage to fetch the data from tmdb, Created two components tvShow Card and Tv Show List.
+
+same thing for upcoming movies
+
+Now upcomingmovies, tv shows and actors views sorted. 
+Next to to the details for th shows and movies + biographies for actors
