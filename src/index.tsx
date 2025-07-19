@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import ActorsPage from "./pages/actorsPage";
+import TvShowsPage from "./pages/tvShowsPage";
 import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
@@ -38,12 +39,16 @@ const App = () => {
           <li>
             <Link to="/actors">Actors</Link>
           </li>
+          <li>
+            <Link to="/tvShows">Tv Shows</Link>
+          </li>
         </ul>
         <MoviesContextProvider>
           <Routes>
             <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
             <Route path="/movies/favourites" element={<FavouriteMoviesPage />} />
             <Route path="/actors" element={<ActorsPage />} />
+            <Route path="/tvShows" element={<TvShowsPage />} />
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />

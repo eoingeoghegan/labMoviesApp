@@ -20,29 +20,28 @@ export interface BaseMovieProps {
     genre_ids?: number[];
   }
 
-  export interface MovieListPageTemplateProps extends BaseMovieListProps {
+export interface MovieListPageTemplateProps extends BaseMovieListProps {
   title: string;
 }
 
 
 //assembling the page
-   export interface BaseMovieListProps { 
-    movies: BaseMovieProps[];
-    action: (m: BaseMovieProps) => React.ReactNode;
-  }  
+export interface BaseMovieListProps { 
+   movies: BaseMovieProps[];
+   action: (m: BaseMovieProps) => React.ReactNode;
+}  
 
 // Extend the Base Movie interface. This component will display genre data
-    export interface MovieDetailsProps extends BaseMovieProps {
-    genres: {
-      id: number;
-      name: string;
-    }[],
-    production_countries: 
-      {
-        iso_3166_1: string,
-        name: string,
-      }[];
-  }
+export interface MovieDetailsProps extends BaseMovieProps {
+  genres: {
+    id: number;
+    name: string;
+  }[],
+  production_countries: {
+    iso_3166_1: string,
+    name: string,
+  }[];
+ }
 
 /*
 To bring the components from the previous section together, we will create a Movie Details page. 
@@ -76,7 +75,7 @@ export interface Review{
     author: string
   }
 
-  export interface GenreData {
+export interface GenreData {
   genres: {
     id: string;
     name: string
@@ -93,43 +92,72 @@ export interface DiscoverMovies {
 
 
 
-  export interface Review {
-    author: string,
-    content: string,
-    agree: boolean,
-    rating: number,
-    movieId: number,
-  }
+export interface Review {
+  author: string,
+  content: string,
+  agree: boolean,
+  rating: number,
+  movieId: number,
+}
 
+// ACTORS
 // from TMDB Api Documentation
-  export interface ActorProps {
-    id: number,
-    place_of_birth: string,
-    name: string,
-    profile_path: string,
-    also_known_as: [],
-    biography: string,
-    birthday: string,
-    deathday: string,
-    gender: number,
-    homepage: string,
-    imdb_id: string,
-    known_for_department: string,
-    popularity: number,
-    poster_path: string,
+export interface ActorProps {
+  id: number,
+  place_of_birth: string,
+  name: string,
+  profile_path: string,
+  also_known_as: [],
+  biography: string,
+  birthday: string,
+  deathday: string,
+  gender: number,
+  homepage: string,
+  imdb_id: string,
+  known_for_department: string,
+  popularity: number,
+  poster_path: string,
+}
 
-  }
+export interface ActorImageProps {
+  file_path: string,
+  aspect_ratio: number,
+  height: number,
+  iso_639_1: string,
+  vote_average: number, 
+  vote_count: number,
+  width: number,
+}
 
-  export interface ActorImageProps {
-    file_path: string,
-    aspect_ratio: number,
-    height: number,
-    iso_639_1: string,
-    vote_average: number, 
-    vote_count: number,
-    width: number,
-  }
+export interface ActorListProps { 
+  actors: ActorProps[];
+}   
 
-   export interface ActorListProps { 
-    actors: ActorProps[];
-  }   
+// TV SHOWS
+export interface TvShowProps {
+  page: number,
+  results: [],
+  backdrop_path: string,
+  first_air_date: string,
+  genre_ids: number,
+  id: number,
+  name: string,
+  origin_country: [],
+  original_language: string
+  original_name: string,
+  overview: string,
+  popularity: number,
+  poster_path: string,
+  vote_average: number,
+  vote_count: number,
+  total_pages: number,
+  total_results: number,
+}
+
+export interface TvShowImage {
+  poster_path: string,
+}
+
+export interface TvShowListProps { 
+  tvShows: TvShowProps[];
+}   
