@@ -139,7 +139,7 @@ export interface TvShowProps {
   results: [],
   backdrop_path: string,
   first_air_date: string,
-  genre_ids: number,
+  genre_ids?: number[],
   id: number,
   name: string,
   origin_country: [],
@@ -152,10 +152,30 @@ export interface TvShowProps {
   vote_count: number,
   total_pages: number,
   total_results: number,
+  
 }
+// TV SHOWS DETAILS interface  
+export interface TvShowDetailsProps extends TvShowProps {
+    genres: {
+      id: number;
+      name: string;
+    }[];
+  }
 
 export interface TvShowImage {
   poster_path: string,
+  file_path: string;
+  aspect_ratio?: number; //some props are optional...
+  height?: number;
+  iso_639_1?: string;
+  vote_average?: number;
+  vote_count?: number;
+  width?: number;
+}
+
+export interface TvShowPageProps {
+  tvShow: TvShowDetailsProps;
+  images: TvShowImage[];
 }
 
 export interface TvShowListProps { 

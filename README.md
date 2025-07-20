@@ -52,4 +52,6 @@ Basic method: changed suteHeader, updated the routes in index, created tv showsP
 same thing for upcoming movies
 
 Now upcomingmovies, tv shows and actors views sorted. 
-Next to to the details for th shows and movies + biographies for actors
+Next to to the details for th shows and movies + biographies for actors, add filtering
+
+3. Creating the tvShowDetails basic. Started by updating the tvshow interfaces- export interface TvShowDetailsProps extends TvShowProps, export interface TvShowImage and export interface TvShowPageProps. Created then the tvShowDetails component and tvShowDetails Page. Next to get it to retrieve data from TMDB. In src/index importing tvShowDetailsPage and create route.
