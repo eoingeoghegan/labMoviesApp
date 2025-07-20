@@ -54,4 +54,4 @@ same thing for upcoming movies
 Now upcomingmovies, tv shows and actors views sorted. 
 Next to to the details for th shows and movies + biographies for actors, add filtering
 
-3. Creating the tvShowDetails basic. Started by updating the tvshow interfaces- export interface TvShowDetailsProps extends TvShowProps, export interface TvShowImage and export interface TvShowPageProps. Created then the tvShowDetails component and tvShowDetails Page. Next to get it to retrieve data from TMDB. In src/index importing tvShowDetailsPage and create route.
+3. Creating the tvShowDetails basic. Started by updating the tvshow interfaces- export interface TvShowDetailsProps extends TvShowProps, export interface TvShowImage and export interface TvShowPageProps. Created then the tvShowDetails component and tvShowDetails Page. Next to get it to retrieve data from TMDB. In src/index importing tvShowDetailsPage and create route. in tvShowDetails I had the fetch (https...) to get live data from TMDB, refactored this to move the code into src/api/TMDB-api.ts and imported these to tvShowDetailsPage and called them here. Now tv shows details can be displayed when clicked into any tv show.

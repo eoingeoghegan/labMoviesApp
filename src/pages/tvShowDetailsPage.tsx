@@ -1,10 +1,13 @@
 import React from "react";
+import { getTvShow, getTvShowImages } from '../api/tmdb-api'
 
 import TvShowDetails from "../components/tvShowDetails";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { TvShowPageProps} from "../types/interfaces";
+import { TvShowDetailsProps} from "../types/interfaces";
+import { useParams } from "react-router-dom";
+import { useQuery } from "react-query";
 
 const styles = {
   imageListRoot: {
@@ -19,7 +22,21 @@ const styles = {
 
 };
 
-const TvShowPage: React.FC<TvShowPageProps> = ({tvShow, images}) => {
+// refactored, fethces images and tvShow data. Fetch live data is in src/api/tmdb-api.ts
+
+const TvShowDetailsPage: React.FC= () => {
+  const { id } = useParams();
+  const { data: tvShow,} = useQuery<TvShowDetailsProps>(
+    ["movie", id],
+    ()=> getTvShow(id||"")
+  );
+const { data: images = [] } = useQuery(
+  ["tvShowImages", id],
+  () => getTvShowImages(id || "")
+);
+
+
+  
 
   return (
     <>
@@ -57,4 +74,4 @@ const TvShowPage: React.FC<TvShowPageProps> = ({tvShow, images}) => {
   );
 };
 
-export default TvShowPage;
+export default TvShowDetailsPage;
