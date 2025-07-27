@@ -9,6 +9,7 @@ import { TvShowDetailsProps} from "../types/interfaces";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 
+
 const styles = {
   imageListRoot: {
     display: "flex",
@@ -44,6 +45,7 @@ const { data: images = [] } = useQuery(
         <>
          
           <Grid container spacing={5} style={{ padding: "15px" }}>
+            </Grid>
             <Grid item xs={3}>
               <div >
                 <ImageList sx={styles.imageListRoot} cols={1}>
@@ -65,7 +67,7 @@ const { data: images = [] } = useQuery(
             <Grid item xs={9}>
               <TvShowDetails {...tvShow} />
             </Grid>
-          </Grid>
+          
         </>
       ) : (
         <h2>Waiting for API data</h2>

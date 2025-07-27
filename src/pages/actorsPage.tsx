@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ActorList from "../components/actorList";
 
 import { ActorProps } from "../types/interfaces";
+import Header from "../components/headerMovieList";
 
 
 
@@ -24,7 +25,7 @@ import { ActorProps } from "../types/interfaces";
 
   return (
     <div>
-      <h2>Popular Actors</h2>
+      <Header title={"Discover Actors"} />
       <ActorList actors={actors} />
     </div>
   );

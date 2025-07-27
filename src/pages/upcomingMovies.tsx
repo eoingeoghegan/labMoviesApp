@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UpcomingMovieList from "../components/upcomingMovieList";
 import { UpcomingMovieProps } from "../types/interfaces";
+import Header from "../components/headerMovieList";
 
 const UpcomingMoviePage: React.FC= () => {
   const [upcomingMovies, setUpcomingMovies] = useState<UpcomingMovieProps[]>([]);
@@ -22,7 +23,7 @@ const UpcomingMoviePage: React.FC= () => {
 
   return (
     <div>
-      <h2>Upcoming Movies</h2>
+      <Header title={"Discover Upcoming Movies"} />
       <UpcomingMovieList upcomingMovies={upcomingMovies} />
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TvShowList from "../components/tvShowList";
 import { TvShowProps } from "../types/interfaces";
+import Header from "../components/headerMovieList";
 
 const TvShowPage: React.FC= () => {
   const [tvShows, setTvShows] = useState<TvShowProps[]>([]);
@@ -22,7 +23,7 @@ const TvShowPage: React.FC= () => {
 
   return (
     <div>
-      <h2>Popular TvShows</h2>
+      <Header title={"Discover Tv Shows"} />
       <TvShowList tvShows={tvShows} />
     </div>
   );
