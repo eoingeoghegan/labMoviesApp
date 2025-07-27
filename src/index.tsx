@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/homePage";
 
 import ActorsPage from "./pages/actorsPage";
+import ActorBioPage from "./pages/actorBioPage";
+
 import TvShowsPage from "./pages/tvShowsPage";
 import TvShowDetailsPage from "./pages/tvShowDetailsPage";
 
@@ -58,6 +60,7 @@ const App = () => {
           <Routes>
 
             <Route path="/actors" element={<ActorsPage />} />
+            <Route path="/actorBio/:id" element={<ActorBioPage />} />
 
             <Route path="/tvShows" element={<TvShowsPage />} />
             <Route path="/tvShows/:id" element={<TvShowDetailsPage />} />
