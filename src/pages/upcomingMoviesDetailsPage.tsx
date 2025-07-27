@@ -1,11 +1,11 @@
 import React from "react";
-import { getTvShow, getTvShowImages } from '../api/tmdb-api'
+import { getMovie, getMovieImages } from '../api/tmdb-api'
 
-import TvShowDetails from "../components/tvShowDetails";
+import UpcomingMovieDetails from "../components/upcomingMovieDetails";
 import Grid from "@mui/material/Grid";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import { TvShowDetailsProps} from "../types/interfaces";
+import { UpcomingMovieProps} from "../types/interfaces";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 
@@ -24,15 +24,15 @@ const styles = {
 
 // refactored, fethces images and tvShow data. Fetch live data is in src/api/tmdb-api.ts
 
-const TvShowDetailsPage: React.FC= () => {
+const UpcomingMoviesDetailsPage: React.FC= () => {
   const { id } = useParams();
-  const { data: tvShow,} = useQuery<TvShowDetailsProps>(
-    ["tvShow", id],
-    ()=> getTvShow(id||"")
+  const { data: movie,} = useQuery<UpcomingMovieProps>(
+    ["movie", id],
+    ()=> getMovie(id||"")
   );
 const { data: images = [] } = useQuery(
-  ["tvShowImages", id],
-  () => getTvShowImages(id || "")
+  ["movieImages", id],
+  () => getMovieImages(id || "")
 );
 
 
@@ -40,7 +40,7 @@ const { data: images = [] } = useQuery(
 
   return (
     <>
-      {tvShow ? (
+      {movie ? (
         <>
          
           <Grid container spacing={5} style={{ padding: "15px" }}>
@@ -63,7 +63,7 @@ const { data: images = [] } = useQuery(
               </div>
             </Grid>
             <Grid item xs={9}>
-              <TvShowDetails {...tvShow} />
+              <UpcomingMovieDetails {...movie} />
             </Grid>
           </Grid>
         </>
@@ -74,4 +74,4 @@ const { data: images = [] } = useQuery(
   );
 };
 
-export default TvShowDetailsPage;
+export default UpcomingMoviesDetailsPage;

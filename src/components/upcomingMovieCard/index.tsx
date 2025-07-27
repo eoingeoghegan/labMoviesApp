@@ -15,6 +15,7 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import { UpcomingMovieProps } from "../../types/interfaces";
 import img from '../../images/film-poster-placeholder.png';
+import { Link } from "react-router-dom";
 
 
 const styles = {
@@ -55,9 +56,11 @@ const UpcomingMovieCard: React.FC<UpcomingMovieProps> = (upcomingMovie) => {
         <IconButton aria-label="add to favorites" >
           <FavoriteIcon color="primary" fontSize="large" />
         </IconButton>
-        <Button variant="outlined" size="medium" color="primary">
-          More Info ...
-        </Button>
+        <Link to={`/upcomingMovies/${upcomingMovie.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
+            More Info ...
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

@@ -61,3 +61,5 @@ Next to to the details for th shows and movies + biographies for actors, add fil
 
 Next fix the actorBio page to show images + other details. Got the images working by changing the tmdb-api.ts getActorsImages.. changed .then((json) => json.poster)  to .then((json) => json.profiles). 
 Next updating the ActorBio to make it look nicer and dsiplay other info about the actors.
+
+Next do the same for upcoming movies to show the details. Same appraoch as tvShowDetails.
