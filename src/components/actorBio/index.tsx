@@ -7,11 +7,12 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { ActorProps } from "../../types/interfaces";
 
+
 const styles = {
     chipSet: {
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        flexDirection: "column",
+        
         flexWrap: "wrap",
         listStyle: "none",
         padding: 1.5,
@@ -23,32 +24,45 @@ const styles = {
 };
 
 const ActorBio: React.FC<ActorProps> = (actorBio) => {
+// Put this is as the gender returns as 1 for female or 2 for male.
+    let gender = " ";
 
+  if (actorBio.gender === 1) {
+    gender = "Female";
+  } else if (actorBio.gender === 2) {
+    gender = "Male";
+  }
     return (
         <>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h4" component="h3" sx={{ fontWeight: 'bold', mb: 3}}>
                 {actorBio.name}
             </Typography>
-            <Typography variant="h5" component="h3">
+            <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold', mb: 2}}>
                 Biography
             </Typography>
-
-            <Typography variant="h6" component="p">
+            <Typography variant="h6" component="p" sx={{fontSize: 16}}>
                 {actorBio.biography}
             </Typography>
-           
-
             <Paper component="ul" sx={styles.chipSet}>
                 <li>
-                    <Chip label="Genres" sx={styles.chipLabel} color="primary" />
+                    <Chip label="Gender :" sx={styles.chipLabel} color="primary" />
+                    {gender}
+                </li>
+                <li>
+                    <Chip label="D.O.B :" sx={styles.chipLabel} color="primary" />
+                    {actorBio.birthday}
+                </li> 
+               <li>
+                    <Chip label="Place of Birth :" sx={styles.chipLabel} color="primary" />
+                    {actorBio.place_of_birth}
                 </li>
                 
-                
+                <li>
+                    <Chip label="Also Known As :" sx={styles.chipLabel} color="primary" />
+                    {actorBio.also_known_as}
+                </li>
             </Paper>
-            <Paper component="ul" sx={styles.chipSet}>
-               
-               
-            </Paper>
+           
         </>
     );
 };

@@ -1,3 +1,4 @@
+
 export const getTvShows = () => {
   return fetch(
     `https://api.themoviedb.org/3/discover/tv?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
@@ -149,7 +150,7 @@ export const getActorsImages = (id: string | number) => {
       throw new Error("failed to fetch images");
     }
     return response.json();
-  }).then((json) => json.posters)
+  }).then((json) => json.profiles)
     .catch((error) => {
       throw error
     });
