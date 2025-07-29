@@ -9,6 +9,7 @@ import { UpcomingMovieProps} from "../types/interfaces";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 
+
 const styles = {
   imageListRoot: {
     display: "flex",

@@ -69,4 +69,6 @@ Next todo - add filter buttons/ drawers to the pages, and add behaviour. First i
 
 In home page edited the behviour of the filtering. Added the onChange to the tvShowFilteringUI and now it filters the page. 
 
+Same Apporoch for upcoming movies page.
+
 Need to fix problem when selecting a tvShow details button. Images are fullscreen.
