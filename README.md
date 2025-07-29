@@ -65,4 +65,8 @@ Next updating the ActorBio to make it look nicer and dsiplay other info about th
 Next do the same for upcoming movies to show the details. Same appraoch as tvShowDetails. Done.
 Cleaned up the website to look better.
 
-Next todo - add filter buttons/ drawers to the pages, and add behaviour
+Next todo - add filter buttons/ drawers to the pages, and add behaviour. First i edited the tvshow Page and added the filter button here. Created the tvShowFilterUI component so when filter button is pressed it shows a menu to select filtering. In the tvShowFilterUI to get it to retrieve data from tmdb im imported { useState, useEffect, ChangeEvent }, added an interface to select the title and genre of tvShow. In the REACT.FC usesd the new interface, fetched the data from tmdb and set this the the genres to retrieve all the cattegories and added the onChange to <Select> and <TextField>. Added the functions for handling change. This isnt working yet but will fix later so it reacts to the page. For now the filter button appears and the menu is displayed.
+
+In home page edited the behviour of the filtering. Added the onChange to the tvShowFilteringUI and now it filters the page. 
+
+Need to fix problem when selecting a tvShow details button. Images are fullscreen.
